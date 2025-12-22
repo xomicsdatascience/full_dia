@@ -1,0 +1,14 @@
+__pycache__/
+.idea/
+.pytest_cache
+.ruff_cache
+
+/build
+/dist
+/sdist
+*.egg-info/
+
+docs/_build/
+docs/_static/
+docs/_templates/
+

@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "full_dia"
+dynamic = ["version"]
+description = "Generate a missingness-free protein quantification matrix from multiple diaPASEF runs through deep learning-based scoring."
+readme = "README.md"
+requires-python = ">=3.10.0"
+license = "Apache-2.0"
+
+authors = [
+  { name = "Jian Song", email = "jian.song.2025@outlook.com" }
+]
+
+dependencies = [
+  "psutil>=7.1,<7.2",
+  "h5py>=3.15,<3.16",
+  "matplotlib",
+  "networkx>=3.5,<3.6",
+  "numba>=0.63",
+  "numpy<2.0.0",
+  "pandas>=2.3",
+  "pyzstd>=0.19",
+  "scikit-learn>=1.8",
+  "scipy>=1.16",
+  "statsmodels>=0.14",
+  "pyarrow>=22.0",
+  "pyyaml>=6.0"
+]
+
+[project.optional-dependencies]
+cuda11 = ["cupy-cuda11x==13.3"]
+cuda12 = ["cupy-cuda12x==13.3"]
+
+dev = [
+  "pytest>=6",
+  "flake8",
+  "black"
+]
+docs = [
+  "sphinx",
+  "sphinx-rtd-theme"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["full_dia*"]
+
+[tool.setuptools.package-data]
+"full_dia" = ["cfg/*.yaml"]
+"full_dia.alphatims" = ["ext/*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "full_dia.__version__"}
+
+[project.scripts]
+full_dia = "full_dia.main:main"
+
+[tool.ruff.lint]
+exclude = [
+    "full_dia/alphatims/**",
+    "ipynb/**"
+]
+select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "I",    # isort
+]
+ignore = [
+    "E501",  # line too long (docstrings often exceed)
+    "B028",  # warnings.warn stacklevel
+    "B905",  # zip(strict=True) conflicts with Numba
+    "UP032", # f-string or .format both ok
+]
+fixable = [
+    "I",
+    "UP"
+]
