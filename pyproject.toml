@@ -49,7 +49,11 @@ where = ["."]
 include = ["full_dia*"]
 
 [tool.setuptools.package-data]
-"full_dia" = ["cfg/*.yaml"]
+"full_dia" = [
+    "cfg/default.yaml",
+    "pretrained/deepcenter_ys_fast.pt",
+    "pretrained/deepbig_ys_fast.pt"
+]
 "full_dia.alphatims" = ["ext/*"]
 
 [tool.setuptools]
