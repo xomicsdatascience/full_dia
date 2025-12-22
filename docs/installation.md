@@ -27,5 +27,5 @@ We recommend using [Conda](https://www.anaconda.com/) to create a Python environ
 
 - Alternatively, you can create a Conda environment with Full-DIA in one command:
     ```bash
-    conda env create -f https://raw.githubusercontent.com/JianSong2018/full_dia/main/requirements/fulldia_cuda12.yml
+    conda env create -f https://raw.githubusercontent.com/xomicsdatascience/full_dia/main/requirements/fulldia_cuda12.yml
     ```
