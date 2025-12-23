@@ -1,3 +1,8 @@
+![Versions](https://img.shields.io/badge/python-3.10_%7C_3.11_%7C_3.12-brightgreen)
+![License](https://img.shields.io/badge/License-Apache-brightgreen)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xomicsdatascience/full_dia/test.yml?branch=main&label=Unit%20Tests)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xomicsdatascience/full_dia/publish.yml?branch=main&label=Deploy%20PyPi)
+
 # Full-DIA
 
 Full-DIA, a freely available software for single-cell diaPASEF data analysis that 
